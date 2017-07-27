@@ -45,6 +45,9 @@
       playonlinux wine
       git nix-prefetch-git wget
       calibre
+      # ubix stuff
+      maven nodejs python gnumake gcc
+      nodePackages.bower nodePackages.grunt-cli nodePackages.gulp
     ];
 
     myemacs = super.emacsWithPackages (with self.emacsPackagesNg; [
