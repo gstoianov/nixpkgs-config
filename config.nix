@@ -1,6 +1,6 @@
 {
   allowUnfree = true;
-  wine.build = "wine32";
+  # wine.build = "wine32";
 
   firefox = {
     enableAdobeFlash = true;
