@@ -48,6 +48,7 @@
       # ubix stuff
       maven nodejs python gnumake gcc
       nodePackages.bower nodePackages.grunt-cli nodePackages.gulp
+      rstudioEnv
     ];
 
     myemacs = super.emacsWithPackages (with self.emacsPackagesNg; [
