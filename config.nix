@@ -70,7 +70,7 @@
       # melpaPackages.helm-projectile
       melpaPackages.ensime
       melpaPackages.scala-mode
-      melpaPackages.jdee
+      # melpaPackages.jdee
 
       # melpaPackages.dirtree
     ]);
