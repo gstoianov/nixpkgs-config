@@ -40,7 +40,7 @@
     };
 
     myPackages = with self; [
-      stack deluge skype slack vlc mc chromium sublime3
+      stack deluge skypeforlinux slack vlc mc chromium sublime3
       bind nix-repl glxinfo pciutils usbutils coreutils
       playonlinux wine
       git nix-prefetch-git wget
