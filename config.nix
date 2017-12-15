@@ -49,6 +49,7 @@
       maven nodejs python gnumake gcc
       nodePackages.bower nodePackages.grunt-cli nodePackages.gulp
       rstudioEnv
+      racket
     ];
 
     myemacs = super.emacsWithPackages (with self.emacsPackagesNg; [
