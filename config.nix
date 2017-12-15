@@ -42,7 +42,7 @@
     myPackages = with self; [
       stack deluge skypeforlinux slack vlc mc chromium sublime3
       bind nix-repl glxinfo pciutils usbutils coreutils
-      playonlinux wine
+      playonlinux wineStaging
       git nix-prefetch-git wget
       calibre
       # ubix stuff
