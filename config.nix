@@ -50,6 +50,13 @@
       nodePackages.bower nodePackages.grunt-cli nodePackages.gulp
       rstudioEnv
       racket
+
+      # on dell: glxinfo, flashplayer-standalone, firefox, aMule
+      # idea-ultimate, sbt
+      # Fluid, qsynth, audacity
+      # dosbox
+      # singular
+      # lm-sensors, gjs, emacs, python2.7-grip, nix-serve
     ];
 
     myemacs = super.emacsWithPackages (with self.emacsPackagesNg; [
