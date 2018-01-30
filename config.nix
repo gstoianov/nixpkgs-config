@@ -31,6 +31,31 @@
     #   ];
     # };
 
+    vowpal-wabbit = super.callPackage ({
+      stdenv, fetchgit, llvmPackages, boost, zlib, jdk, which
+      }:
+      stdenv.mkDerivation {
+        name = "vowpal-wabbit";
+        buildInputs = [ llvmPackages.clang-unwrapped boost zlib jdk which ];
+        patchPhase = ''
+          substituteInPlace Makefile --replace "/usr/local" "$out"
+          substituteInPlace vowpalwabbit/Makefile --replace "/usr/local" "$out"
+          substituteInPlace java/Makefile --replace "/usr" "$out"
+          substituteInPlace cluster/Makefile --replace "/usr/local" "$out"
+        '';
+        preInstall = ''
+          mkdir -p $out/bin
+          mkdir -p $out/lib
+          mkdir -p $out/include
+        '';
+        src = fetchgit {
+          url = "https://github.com/JohnLangford/vowpal_wabbit.git";
+          sha256 = "0h7kn2152hf199b920a797fxmlg15n1r94878dv0nryh3qnb3ab5";
+          rev = "77753f0a8e73ea372ad25f24abd710f278975efc";
+        };
+      }
+    ) { };
+
     rstudioEnv = super.rstudioWrapper.override {
       packages = with self.rPackages; [
         tidyverse pryr htmltools htmlwidgets
@@ -50,6 +75,7 @@
       nodePackages.bower nodePackages.grunt-cli nodePackages.gulp
       rstudioEnv
       racket
+      vowpal-wabbit
 
       # on dell: glxinfo, flashplayer-standalone, firefox, aMule
       # idea-ultimate, sbt
