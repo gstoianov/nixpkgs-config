@@ -67,7 +67,7 @@
     myPackages = with self; [
       stack deluge skypeforlinux slack vlc mc chromium sublime3
       bind nix-repl glxinfo pciutils usbutils coreutils
-      playonlinux wineStaging
+      playonlinux wineStaging dosbox
       git nix-prefetch-git wget
       calibre
       # ubix stuff
@@ -77,10 +77,9 @@
       racket
       vowpal-wabbit
 
-      # on dell: glxinfo, flashplayer-standalone, firefox, aMule
+      # on dell: flashplayer-standalone, firefox, aMule
       # idea-ultimate, sbt
       # Fluid, qsynth, audacity
-      # dosbox
       # singular
       # lm-sensors, gjs, emacs, python2.7-grip, nix-serve
     ];
