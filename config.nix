@@ -66,7 +66,7 @@
 
     myPackages = with self; [
       stack deluge skypeforlinux slack vlc mc chromium sublime3
-      bind nix-repl glxinfo pciutils usbutils coreutils
+      bind glxinfo pciutils usbutils coreutils
       playonlinux wineStaging dosbox
       git nix-prefetch-git wget
       calibre
@@ -81,7 +81,7 @@
       # idea-ultimate, sbt
       # Fluid, qsynth, audacity
       # singular
-      # lm-sensors, gjs, emacs, python2.7-grip, nix-serve
+      # lm-sensors, gjs, emacs, python2.7-grip
     ];
 
     myemacs = super.emacsWithPackages (with self.emacsPackagesNg; [
