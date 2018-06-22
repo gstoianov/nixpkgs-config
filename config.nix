@@ -85,6 +85,11 @@
       # lm-sensors, gjs, emacs, python2.7-grip
     ];
 
+    mytexlive = super.texlive.combine {
+      # inherit (super.texlive) moderncv collection-fontsextra;
+      inherit(super.texlive) scheme-full;
+    };
+
     myemacs = super.emacsWithPackages (with self.emacsPackagesNg; [
       magit
 
