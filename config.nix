@@ -65,10 +65,11 @@
     };
 
     myPackages = with self; [
-      stack deluge skypeforlinux slack vlc mc chromium sublime3
+      stack deluge skypeforlinux slack vlc mc chromium sublime3 adobe-reader
       bind glxinfo pciutils usbutils coreutils
       playonlinux wineStaging dosbox
       git nix-prefetch-git wget
+      mytexlive
       calibre
       # ubix stuff
       maven nodejs python gnumake gcc
