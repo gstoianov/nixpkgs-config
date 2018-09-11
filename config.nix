@@ -1,10 +1,18 @@
 {
   allowUnfree = true;
   # wine.build = "wine32";
+  # wine = {
+    # build = "wineWow";
+    # release = "staging";
+  # };
 
   firefox = {
     enableAdobeFlash = true;
   };
+
+  # chromium = {
+  #   enablePepperFlash = false;
+  # };
 
   packageOverrides = super: let self = super.pkgs; in {
     # jdk = pkgs.oraclejdk8;
