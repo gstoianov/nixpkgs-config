@@ -73,19 +73,34 @@
     };
 
     myPackages = with self; [
-      stack deluge skypeforlinux slack vlc mc chromium sublime3 adobe-reader
+      chromium firefox flashplayer-standalone
+      stack vlc mc sublime3 adobe-reader
       bind glxinfo pciutils usbutils coreutils
-      playonlinux wineStaging dosbox
+      playonlinux wine-staging dosbox
       git nix-prefetch-git wget
       mytexlive
       calibre
       # ubix stuff
-      maven nodejs python gnumake gcc
-      nodePackages.bower nodePackages.grunt-cli nodePackages.gulp
-      rstudioEnv
+      maven sbt openjdk myPython gnumake gcc
+      nodejs nodePackages.bower nodePackages.grunt-cli nodePackages.gulp
       racket
       vowpal-wabbit
 
+      # amule
+      pythonPackages.grip deluge
+
+      pstree tree htop
+
+      emacs vim postman
+
+      spark hadoop mesos mongodb
+      kafkacat zookeeper cassandra
+
+      soundfont-fluid qsynth audacity
+
+      singular
+
+      jetbrains.idea-ultimate slack
       # on dell: flashplayer-standalone, firefox, aMule
       # idea-ultimate, sbt
       # Fluid, qsynth, audacity
@@ -93,10 +108,18 @@
       # lm-sensors, gjs, emacs, python2.7-grip
     ];
 
+    flakeyPackages = with self; [
+      amule
+      skypeforlinux
+      rstudioEnv
+    ];
+
     mytexlive = super.texlive.combine {
       # inherit (super.texlive) moderncv collection-fontsextra;
       inherit(super.texlive) scheme-full;
     };
+
+    myPython = super.python27.withPackages (ps : [ ps.pip ps.setuptools ]);
 
     myemacs = super.emacsWithPackages (with self.emacsPackagesNg; [
       magit
