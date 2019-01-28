@@ -76,9 +76,9 @@
       chromium firefox flashplayer-standalone
       stack vlc mc sublime3 adobe-reader
       bind glxinfo pciutils usbutils coreutils
+      tcpdump ipcalc
       playonlinux wine-staging dosbox
-      git nix-prefetch-git wget
-      mytexlive
+      git nix-prefetch-git wget gnupg
       calibre
       # ubix stuff
       maven sbt openjdk myPython gnumake gcc
@@ -89,18 +89,23 @@
       # amule
       pythonPackages.grip deluge
 
-      pstree tree htop
+      pstree tree htop tmux
+
+      lxc
 
       emacs vim postman
 
       spark hadoop mesos mongodb
       kafkacat zookeeper cassandra
 
-      soundfont-fluid qsynth audacity
+      # soundfont-fluid qsynth audacity
 
       singular
 
       jetbrains.idea-ultimate slack
+
+      ansible
+
       # on dell: flashplayer-standalone, firefox, aMule
       # idea-ultimate, sbt
       # Fluid, qsynth, audacity
@@ -109,6 +114,7 @@
     ];
 
     flakeyPackages = with self; [
+      mytexlive
       amule
       skypeforlinux
       rstudioEnv
