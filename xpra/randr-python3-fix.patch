@@ -1,0 +1,13 @@
+diff --git a/xpra/x11/bindings/randr_bindings.pyx b/xpra/x11/bindings/randr_bindings.pyx
+index 482ca29..fca33c8 100644
+--- a/xpra/x11/bindings/randr_bindings.pyx
++++ b/xpra/x11/bindings/randr_bindings.pyx
+@@ -367,7 +367,7 @@ cdef class _RandRBindings(_X11CoreBindings):
+         from xpra.util import roundup
+         w = roundup(w, 4)
+         name = self.get_mode_name(w, h)
+-        new_mode = XRRAllocModeInfo(name, len(name))
++        new_mode = XRRAllocModeInfo(name.encode('utf-8'), len(name))
+         try:
+             window = XDefaultRootWindow(self.display)
+ 

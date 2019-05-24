@@ -85,7 +85,6 @@
       nodejs nodePackages.bower nodePackages.grunt-cli nodePackages.gulp
       racket
       vowpal-wabbit
-
       # amule
       pythonPackages.grip deluge
 
@@ -93,10 +92,12 @@
 
       lxc
 
+      myXpra
+
       emacs vim postman
 
-      spark hadoop mesos mongodb
-      kafkacat zookeeper cassandra
+      # spark hadoop mesos mongodb
+      # kafkacat zookeeper cassandra
 
       # soundfont-fluid qsynth audacity
 
@@ -126,6 +127,8 @@
     };
 
     myPython = super.python27.withPackages (ps : [ ps.pip ps.setuptools ]);
+
+    myXpra = super.callPackage ./xpra { };
 
     myemacs = super.emacsWithPackages (with self.emacsPackagesNg; [
       magit
